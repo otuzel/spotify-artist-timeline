@@ -9,13 +9,14 @@ import { SearchService } from '../../services/search.service';
 export class SearchComponent implements OnInit {
   artists: []
   constructor(private searchService: SearchService) { }
-  // search(term: string): void {
-  //   this.searchService.searchArtist();
-  // }
-  searchArtist() {
-    this.searchService.searchArtist()
-      .subscribe(data => this.artists = data.artists.items.map( item => item.name ));
+  searchArtist(term: string): void {
+    this.searchService.searchArtist(term)
+        .subscribe(data => this.artists = data.artists.items.map(item => item.name));
   }
+  // searchArtist2() {
+  //   this.searchService.searchArtist2()
+  //     .subscribe(data => this.artists = data.artists.items.map( item => item.name ));
+  // }
   ngOnInit() {
   }
 }

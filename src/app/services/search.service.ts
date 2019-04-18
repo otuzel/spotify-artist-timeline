@@ -7,11 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class SearchService {
   constructor( private http: HttpClient) { }
-  searchArtist() {
-    return this.http.get<any>('api/search');
+  searchArtist(term: string): Observable<any> {
+      return this.http.get(`api/search?term=${term}`);
   }
-  // searchArtist(term: string): void {
-  //   let url = this.artistSearchUrl + term;
-  //   console.log(url);
-  // }
 }

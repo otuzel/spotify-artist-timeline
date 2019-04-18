@@ -1,5 +1,5 @@
 <div id="search-component">
-  <input #searchBox (input)=search(searchBox.value)>
+  <input #searchBox (input)=searchArtist(searchBox.value)>
   <button (click)=searchArtist()>Search Artist</button>
   <ul class="search-results">
     <li *ngFor="let artist of artists" class="search-results__item">
