@@ -1,13 +1,9 @@
 <div id="search-component">
+  Component: Search
   <input #searchBox (input)=searchArtist(searchBox.value)>
-  <button (click)=searchArtist()>Search Artist</button>
   <ul class="search-results">
-    <li *ngFor="let artist of artists" class="search-results__item">
-      {{artist}}
+    <li *ngFor="let artist of artists$ | async" class="search-results__item" (click)="artistIdChanged(artist.id)">
+      {{artist.name}}
     </li>
   </ul>
-
-  <!-- <mat-form-field>
-    <input type="text" matInput [formControl]="myControl">
-  </mat-form-field> -->
 </div>

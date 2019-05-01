@@ -1,11 +1,12 @@
 <div class="wrapper">
   <header>
-    Header
+    
   </header>
   <main>
-    <app-search></app-search>
+    <app-search (artistIdChange)='setArtistId($event)'></app-search>
+    <app-timeline [artistId]="artistId"></app-timeline>
   </main>
   <footer>
-    Footer
+    
   </footer>
 </div>

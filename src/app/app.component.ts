@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'spotify-artist-timeline';
+  artistId: string;
+  setArtistId(id: string) {
+    this.artistId = id;
+  }
 }
